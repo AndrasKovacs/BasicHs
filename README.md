@@ -1,2 +1,5 @@
-# BasicHs
-Basic Haskell ("funkcionális programozás gyakorlat") lecture notes
+# Funkcionális programozás gyakorlat órai jegyzetek
+
+Ez a repó jelenleg a "funkcionális programozás" (IP-08bFUNPEG) tárgy
+gyakorlatai keletkezett Haskell jegyzeteket tartalmazza, a
+[lectureNotes](/lectureNotes) könyvtárban.
