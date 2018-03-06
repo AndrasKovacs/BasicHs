@@ -6,4 +6,4 @@ következő anyagokat tartalmazza:
 - [lectureNotes](/lectureNotes): órai jegyzetek
 - [homeworks.md](/homeworks.md): házi feladatok kiírásai.
 
-(email címem: kovacsandras @ inf.elte.hu) (szóköz nélkül a kukac előtt/után)
+(email címem: kovacsandras @ inf.elte.hu, szóköz nélkül a kukac előtt/után)
