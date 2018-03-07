@@ -24,3 +24,17 @@ dropEveryNth [0..10] 3 == [0,1,3,4,6,7,9,10]
 dropEveryNth [0..10] 1 == []
 dropEveryNth [0..10] 5 == [0,1,2,3,5,6,7,8,10]
 ```
+#### 3
+
+Írj egy `getWords :: String -> [String]` függvényt, ami szavakra bont fel egy input `String`-et. Azaz, az inputban egy vagy több szóközzel elválasztott rész-`String`-ek listáját kell visszaadni. Példák:
+
+```haskell
+getWords "foo bar" == ["foo", "bar"]
+getWords "  foo  bar  " == ["foo", "bar"]
+getWords "" == []
+getWords "a b c d e f" == ["a", "b", "c", "d", "e", "f"]
+```
+
+Tipp: mintaillesztést csinálhatunk a szóköz karakteren `' '`, vagy `==`-el vizsgálhatjuk karakterek egyenlőségét. 
+
+Figyelem: ne használjuk a standard `words` függvényt.
