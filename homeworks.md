@@ -38,3 +38,14 @@ getWords "a b c d e f" == ["a", "b", "c", "d", "e", "f"]
 Tipp: mintaillesztést csinálhatunk a szóköz karakteren `' '`, vagy `==`-el vizsgálhatjuk karakterek egyenlőségét. 
 
 Figyelem: ne használjuk a standard `words` függvényt.
+
+#### 4
+
+Írjunk egy `composeAll :: [a -> a] -> a -> a` függvényt. Az input `[a -> a]` függvényeket tartalmazó lista, a feladat az összes ebben található függvényt alkalmazni az `a` inputra. A függvényeket jobbról balra alkalmazzuk, pl. `composeAll [f, g, h] x = f (g (h (x))`. Továbbá, `composeAll [] x = x` teljesül. Példák a működésre:
+
+```haskell
+composeAll [(+10), (+20), (+30)] 0 == 60
+composeAll [(*10), (+20)] 2 == 220
+composeAll [] True == True
+composeAll [('a':), ('b':), ('c':)] "" == "abc"
+```
