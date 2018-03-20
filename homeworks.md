@@ -49,3 +49,27 @@ composeAll [(*10), (+20)] 2 == 220
 composeAll [] True == True
 composeAll [('a':), ('b':), ('c':)] "" == "abc"
 ```
+
+#### 5
+
+Írjunk egy `groupBy :: (a -> a -> Bool) -> [a] -> [[a]]` függvényt. A függvény szétbontja az input listát output listákra úgy, hogy a `concat`-olt output visszaadja az inputot, továbbá igaz, hogy az `a -> a -> Bool` függvény `True`-t ad minden egymást követő két értékre az output listákban.
+
+Példák a működésre:
+
+```haskell
+-- grouBy (==) az egyenlő elemeket csoportosítja
+groupBy (==) [0, 0, 1, 1, 2, 2] == [[0, 0], [1, 1], [2, 2]]
+groupBy (==) [0, 1, 2] == [[0], [1], [2]]
+-- groupBy (<) a szigorú növekvő részlistákat adja vissza
+groupBy (<) [0, 1, 2, 1, 2, 3] == [[0,1,2],[1,2,3]]
+groupBy (<) [3, 4, 5] == [[3], [4], [5]]
+
+groupBy (>=) [3, 3, 1, 5] == [[3,3,1],[5]]
+
+-- a részlisták, amelynél az egymást követő elemek különbsége 1:
+groupBy (\x y -> abs (x - y) == 1) [0, 1, 3, 4] == [[0, 1], [3, 4]]
+groupBy (\x y -> abs (x - y) == 1) [1, 2, 3, 2, 1, 10, 11] == [[1,2,3,2,1],[10,11]]
+```
+
+Figyelem: bár a `Data.List` modulban található egy standard `groupBy` függvény, annak a viselkedése különböző a jelenlegi feladatban várt megoldástól.
+
