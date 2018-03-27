@@ -213,3 +213,10 @@ elem' a = any'' (\a' -> a == a')
 -- extra házi: meditáljunk az alábbi definíción
 fibs :: [Integer]
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+
+groupBy :: (a -> a -> Bool) -> [a] -> [[a]]
+groupBy f []     = []
+groupBy f (x:xs) = case groupBy f xs of
+  (y:ys):yss | f x y     -> (x:y:ys):yss
+             | otherwise -> [x]:(y:ys):yss
+  _         -> [[x]]
