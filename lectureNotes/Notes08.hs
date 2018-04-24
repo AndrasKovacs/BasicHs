@@ -192,3 +192,9 @@ ix (a:as) n = ix as (n - 1)
 
 -- több programot írhatunk loop nélkül,
 -- de némi futásidejű költséggel
+
+
+
+(a -> b) -> [a] -> [b]
+
+(a -> [a]) -> [a]
