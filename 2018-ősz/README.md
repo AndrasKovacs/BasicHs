@@ -18,3 +18,13 @@
   + Szorgalmi időszak utolsó hetében gyakorló zárthelyi. Ez nem számít be sehova, célja a vizsga formátumával és tartalmával való megismerkedés, a részvétel viszont kötelező.
 - Vizsga:
   + Vizsgaidőszakban. A tárgy jegyét a vizsga adja. Két részből áll: írásbeli (feleletválasztás), aztán gépes feladatmegoldás. Összesen három óra szokott rendelkezésre állni.
+ 
+#### Eszközök
+
+- GHC interpreter. Ajánlott installáció: https://www.haskell.org/platform/ 
+- Bármilyen, kód szerketésére alkalmas szövegszerkesztő. 
+  + Egyszerű szerkesztők (ajánlott):
+    - Windows: notepad++
+    - linux: gedit, medit, geany.
+  + (Fejlettebb szerkesztők: Emacs, Visual Studio Code, Sublime Text, Atom)
+
