@@ -1,23 +1,24 @@
-
 {-
-
 Gyak. vezető: Kovács András
       email: kovacsandras@inf.elte.hu
-      gyakorlat honlap: github.com/AndrasKovacs/BasicHs  (2018 ősz mappa)
+      gyakorlat honlap: github.com/AndrasKovacs/BasicHs
+      (2018 ősz mappa)
 
 
 Tananyagról röviden:
 
+- Haskell nyelvet tanuljuk (kicsi részét)
+  - nem szoftverfejlesztés, csak nyelvi alapok
+
+funkc. vs imperatív:
+
 - funkcionális programozás:
   - definíciók sorozata
-  - Haskell nyelvet tanuljuk (nagyon kicsi részét)
-    - nem szoftverfejlesztés, csak nyelvi alapok
-  - típusok, függvények, rekurzió (talán adatszerkezetek)
+  - fogalmak: típusok, függvények, rekurzió (talán adatszerkezetek)
 
 - imperatív programozás
   - utasítások sorozata egy program
-  - hogy működik a memória
-  - utasítások, ciklusok
+  - memóriakezelés, utasítások, ciklusok
 
 ghci parancssorból:
   "ghci fájl.hs" : fájlt tölti be
@@ -33,18 +34,18 @@ ghci parancsok:
 
 -}
 
-{-
-többsoros komment példa:
-blabla
-blabla
-A kommenteket a ghci nem veszi figyelembe betöltéskor
--}
-
 -- egysoros komment példa: blabla
 
-------------------------------------------------------------
+{-
+  többsoros komment példa:
+  blabla
+  blabla
+  A kommenteket a ghci nem veszi figyelembe betöltéskor
+-}
+
 
 -- Egész számok
+------------------------------------------------------------
 -- típus: Int
 -- egész szám angolul: integer
 
@@ -52,7 +53,8 @@ szam :: Int         -- típusa a definíciónak
 szam = 1000         -- értéke a definíciónak
 
 -- általában:
---   definíciók neve kisbetűvel kezdődnek
+--   definíciók nevei kisbetűvel kezdődnek
+--   típusnevek nagybetűvel kezdődnek
 
 szam2 :: Int        -- másik definíció
 szam2 = 2000
@@ -73,7 +75,8 @@ szam7 :: Int
 szam7 = mod 10 3            -- maradékot megadja
 
 -- logikai értékek
---   típusa: Bool   ("Boolean",  személy neve: George Boole)
+------------------------------------------------------------
+-- típusa: Bool   (személy nevéből: George Boole)
 
 log1 :: Bool
 log1 = True       -- nagybetűs logikai értékek: True és False
@@ -98,12 +101,12 @@ log5 = not True         -- negáció: not
 --                    Haskell-ben  : div 10 4
 
 -- Haskell:
---   erősen típusozott: mindennek van típusa
---                      program futtatása, kifejezés kiértékelése
---                      előtt mindennek ismert a típusa.
---                      nem lehet a típusokban "hazudni"
+--   erősen típusozott: - mindennek van típusa
+--                      - program futtatása, kifejezés kiértékelése előtt mindennek ismert a típusa.
+--                      - különböző típusok közötti konverziót explicit ki kell írni
 
 -- egyenlőségvizsgálat: ==
+------------------------------------------------------------
 -- egyenlőségvizsgálat több fajta típuson működik
 --   viszont: a két bemenet mindig ugyanolyan típusú kell, hogy legyen
 
@@ -118,6 +121,7 @@ log7 = True == True
 
 
 -- törtszámok: típus neve: Double  (más nyelvekben: Float)
+------------------------------------------------------------
 --   (lebegőpontos számábrázolás: "float"
 --    dupla pontosságú lebegőpontos szám: "Double"
 
@@ -189,7 +193,20 @@ fn4 x y = x + y * 100
 szam11 = fn4 10 (100 + 400) -- típus egyértelmű
       -- fn4(10, 100+400)
 
--- másik jelölés függvény definiálására
+-- if-then-else kifejezések:
+fn5 :: Bool -> Int
+fn5 x = if x then 0 else 1
+      -- if   után: Bool kifejezés
+      -- then után: akármilyen típusú kifejezés
+      -- else után: ugyanolyan típusú kifejezés, mint then után
+
+      -- "if x then a else b" értéke "a", ha "x==True", és "b", ha
+      -- "x==False"
+
+
+-- másik jelölés függvény definiálására (lambda kifejezések)
+------------------------------------------------------------
+
 -- matematikában:
 --     f : ℕ → ℕ
 --     f = x ↦ x + x
@@ -208,8 +225,26 @@ szam12 = (\x -> x + 10) 5   -- eredmény: 15
 -- itt a "(\x -> x + 10)" egy (Int -> Int) függvény jelölése, és rögtön alkalmazzuk ezt a függvényt
 -- 5-re.
 
+
+-- operátorok függvénnyé alakítása zárójellel
 ------------------------------------------------------------
+
+-- Ha egy operátort zárójelbe rakunk, akkor úgy viselkedik, mint egy függvény, és
+-- úgy is kell alkalmazni
+
+-- példák:
+logikai :: Bool
+logikai = (&&) True False
+
+szam10 :: Int
+szam10 = (+) 10 20
+
+-- ghci-ben lekérdezhetjük így egy operátor típusát, :t-vel.
+--   Prelude> :t (&&)
+--   (&&) :: Bool -> Bool -> Bool
+
 -- Szöveg típus: String
+------------------------------------------------------------
 
 str1 :: String
 str1 = "kutya"
@@ -225,11 +260,11 @@ str2 = "kutya" ++ "!" -- "kutya!"
 len :: Int
 len = length str2
 
-------------------------------------------------------------
-
 
 -- Hoogle: https://www.haskell.org/hoogle/
+------------------------------------------------------------
 -- itt lehet keresni név vagy típus alapján függvényekre és dokumentációra.
-
 -- default definíciók, amik mindig betöltödnek: Prelude-ben vannak
 -- érdemes: azokat nézni, amelyek a Prelude-ben vannak definiálva
+
+-- Prelude: default műveletek és típusok ghci indítás után rögtön elérhetők
