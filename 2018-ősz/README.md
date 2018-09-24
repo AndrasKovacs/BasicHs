@@ -23,6 +23,11 @@
   + Szorgalmi időszak utolsó hetében gyakorló zárthelyi. Ez nem számít be sehova, célja a vizsga formátumával és tartalmával való megismerkedés, a részvétel viszont kötelező.
 - Vizsga:
   + Vizsgaidőszakban. A tárgy jegyét a vizsga adja. Két részből áll: írásbeli (feleletválasztás), aztán gépes feladatmegoldás. Összesen három óra szokott rendelkezésre állni.
+  
+#### Gyakorlati jegyzetek
+
+- Haskell fájlok a [gyakjegyzetek](gyakjegyzetek) mappában.
+- Két gyakorlat van, a hétfő 8:00 órái, és a 14:00 órai. Amennyiben nincs jelentős eltérés valamelyik héten a két gyakorlat jegyzete között, a két jegyzetet egyesítem. Ha a két jegyzet eltér, akkor külön felteszek "a" verziót, és "b" verziót, ahol az "a" a 8 órai, a "b" a 14 órai gyakorlat jegyzete.
  
 #### Eszközök
 
